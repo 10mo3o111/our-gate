@@ -39,6 +39,8 @@
 - URL、querystringモジュール  
   リクエストURL解析とPOSTデータ処理。
 
+### その他
+
 - CSS（normalize.css、style.css）  
   ページのスタイル調整。
 
