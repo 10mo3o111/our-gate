@@ -20,8 +20,11 @@ readFromFile(filename);
 
 const server = http.createServer(getFromClient);
 
-server.listen(3000);
-console.log("Start☆");
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}☆`);
+});
 
 function getFromClient(req, res) {
   const urlParts = url.parse(req.url, true);
