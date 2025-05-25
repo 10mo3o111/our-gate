@@ -1,0 +1,5 @@
+[
+  { "id": "taro", "password": "1234", "name": "田中 太郎" },
+  { "id": "hanako", "password": "5678", "name": "山田 花子" },
+  { "id": "jiro", "password": "abcd", "name": "佐藤 次郎" }
+]

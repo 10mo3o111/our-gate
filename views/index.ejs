@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="l_header header">
+      <h1 class="header__title"><%= h1 %></h1>
+      <p class="header__subtitle"><%= subTitle %></p>
+    </header>
+    <main>
+      <div class="loginBox">
+        <h2 class="loginForm__heading"><%= formTitle %></h2>
+        <p class="loginForm__note">
+          <span class="loginForm__noteDecoration"
+            ><%= noteFirstLine %> <br /><%= noteSecondLine %>
+          </span>
+        </p>
+        <form method="post" action="/other" id="loginForm" class="loginForm">
+          <input
+            type="text"
+            id="userId"
+            name="userId"
+            class="loginForm__id"
+            placeholder="IDを入力"
+            required
+          />
+          <input
+            type="password"
+            id="userPassword"
+            name="userPassword"
+            class="loginForm__password"
+            placeholder="パスワードを入力"
+            required
+          />
+          <button type="submit" class="loginForm__btn"><%= formBtn %></button>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="/dist/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= otherTitle %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="l_pageheader">
+      <h1 class="header__title"><%= otherH1 %></h1>
+      <p class="header__subtitle"><%= subTitle %></p>
+    </header>
+    <main class="l_pagemain">
+      <section class="board">
+        <h2 class="board__title"><%= boardTitle %></h2>
+        <form class="boardForm" method="post" action="/other">
+          <label for="username" class="boardForm__label">
+            名前を入力（10文字まで）
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="boardForm__input"
+            maxlength="10"
+            placeholder="名前を入力してください"
+            required
+          />
+          <label for="message" class="boardForm__label"
+            ><%= boardFormLabel %></label
+          >
+          <input
+            type="text"
+            id="message"
+            name="message"
+            class="boardForm__input"
+            maxlength="30"
+            placeholder="メッセージを入力してください"
+            required
+          />
+          <button type="submit" class="boardForm__btn"><%= boardFormBtn %></button>
+        </form>
+        <ul class="boardHistory">
+          <% for (let val of messageData) { %>
+            <%- include('data_item', { val: val }) %>
+          <% } %>
+        </ul>
+    </main>
+    <footer class="l_footer footer">
+      <p class="footer__text">
+        &copy;&nbsp;<span id="year"></span>&nbsp;<%= footerText %>
+      </p>
+    </footer>
+    <script type="module" src="/dist/main.js"></script>
+  </body>
+</html>
